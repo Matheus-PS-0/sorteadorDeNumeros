@@ -4,16 +4,25 @@ function sortear(){
     let numMaximo = parseInt(document.getElementById("ate").value);
     let numerosSorteados = [];
     let resultado;
+    if (quantidadeDeJogos == "") {
+        alert ('Escolha uma quantidade de Jogos')
+        return
+    }
+    if (isNaN(numMinimo) || numMinimo <= 0) {
+        alert ('Campo do Numero vazio')
+        return
+    }
+    if (isNaN(numMaximo) || numMaximo <= 0) {
+        alert ('Campo ate o numero vazio')
+        return
+    }
     if (numMinimo > numMaximo){
         alert('o valor escolhido "Do numero" nao pode ser maior que a valor do "ate o numero"')
-        return
-        
+        return        
     }
     if (quantidadeDeJogos > (numMaximo - numMinimo + 1)) {
         alert('o valor da quantidade de jogos nao pode ser superior a quantidade de possibilidades entre')
-        return
-        
-        
+        return                
     } 
 
     for (let index = 0; index < quantidadeDeJogos; index++) {
